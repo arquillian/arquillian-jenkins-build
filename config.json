@@ -1,0 +1,31 @@
+{
+   "maven": "Maven 3.2.5",
+   "jdk": "Oracle JDK 1.7",
+   "profile": "clean package",
+   "arquillian-core": {
+      "downstream": [
+         {
+            "id": "arquillian-extension-drone",
+            "exp": "version.arquillian.core"
+         },
+         {
+            "id": "arquillian-extension-warp",
+            "exp": "version.arquillian_core"
+         }
+      ]
+   },
+   "arquillian-extension-drone": {
+      "downstream": [
+         {
+            "id": "arquillian-graphene",
+            "exp": "version.arquillian.drone"
+         }
+      ]
+   },
+   "arquillian-container-weld": {
+      "profiles": [
+         "clean package -P 2.x",
+         "clean package -P 1.1.x"
+      ]
+   }
+}
